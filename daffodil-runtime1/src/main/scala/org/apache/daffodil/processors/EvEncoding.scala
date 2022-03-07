@@ -95,10 +95,23 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
     val encString = encodingEv.evaluate(state)
     val cs = CharsetUtils.getCharset(encString)
     if (cs == null) {
-      tci.schemaDefinitionError("Unsupported encoding: %s. Supported encodings: %s", encString, CharsetUtils.supportedEncodingsString)
+      val cs2 = CharsetCompilerRegistry
+        .find(encString, tci)
+        .compileCharset
+        .newInstance()
+      if (cs2 == null) {
+        tci.schemaDefinitionError(
+          "Unsupported encoding: %s. Supported encodings: %s",
+          encString,
+          CharsetUtils.supportedEncodingsString
+        )
+      }
+      if (!encodingEv.isConstant) checkCharset(state, cs2.bitsCharset)
+      cs2.bitsCharset
+    } else {
+      if (!encodingEv.isConstant) checkCharset(state, cs)
+      cs
     }
-    if (!encodingEv.isConstant) checkCharset(state, cs)
-    cs
   }
 }
 
