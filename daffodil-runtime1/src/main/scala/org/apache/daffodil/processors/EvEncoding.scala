@@ -26,7 +26,7 @@ import org.apache.daffodil.exceptions.Assert
 import org.apache.daffodil.util.MaybeInt
 import org.apache.daffodil.cookers.FillByteCooker
 import org.apache.daffodil.cookers.EncodingCooker
-import org.apache.daffodil.charsets.CharsetCompilerRegistry
+import org.apache.daffodil.processors.charset.CharsetCompilerRegistry
 
 /*
  * The way encoding works, is if a EncodingChangeParser or Unparser is

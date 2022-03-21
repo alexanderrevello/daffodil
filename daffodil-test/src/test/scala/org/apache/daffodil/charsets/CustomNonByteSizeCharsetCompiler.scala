@@ -17,6 +17,9 @@
 
 package org.apache.daffodil.charsets
 
+import org.apache.daffodil.processors.charset.CharsetCompiler
+import org.apache.daffodil.processors.charset.BitsCharsetTransformerFactory
+
 final class CustomNonByteSizeCharsetCompiler
   extends CharsetCompiler("X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE") {
 
