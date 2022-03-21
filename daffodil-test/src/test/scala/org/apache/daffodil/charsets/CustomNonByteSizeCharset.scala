@@ -21,9 +21,7 @@ import org.apache.daffodil.schema.annotation.props.gen.BitOrder
 import org.apache.daffodil.processors.charset.BitsCharsetNonByteSize
 
 final class CustomNonByteSizeCharset(
-  name2: String)
-extends  CharsetTransformer(
-  name2){
+  name2: String){
 
 def bitsCharset = new ISO88591Reverse(name2)
 

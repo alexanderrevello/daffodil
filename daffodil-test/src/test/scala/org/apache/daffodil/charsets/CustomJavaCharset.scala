@@ -24,9 +24,7 @@ import org.apache.daffodil.io.InputSourceDataInputStream
 import org.apache.daffodil.io.FormatInfo
 
 final class CustomJavaCharset(
-  name2: String)
-extends  CharsetTransformer(
-  name2){
+  name2: String){
 
 def bitsCharset = BitsCharsetISO885913
 

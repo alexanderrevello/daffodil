@@ -21,13 +21,15 @@ package org.apache.daffodil.charsets
 import org.apache.daffodil.processors.charset.BitsCharset
 
 /**
- * Shared functionality of all CharsetTransformers.
+ * Factory for a charset transformer.
  *
- * A charset transformer is created at runtime as part of a single parse/unparse call.
- * Hence, they can be stateful without causing thread-safety issues.
+ * This is the serialized object which is saved as part of a processor.
+ * It constructs the charset transformer at runtime when newInstance() is called.
+ *
+ * This must be implmented as part of implementation of a daffodil charset.
  */
-abstract class CharsetTransformer(charsetName: String){
+abstract class BitsCharsetTransformerFactory
+  extends Serializable {
 
-  def bitsCharset: BitsCharset
-
+  def newInstance(): BitsCharset
 }

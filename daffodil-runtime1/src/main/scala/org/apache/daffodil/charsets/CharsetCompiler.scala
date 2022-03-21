@@ -30,6 +30,6 @@ abstract class CharsetCompiler(nom: String) {
 
   def name() = nom
 
-  def compileCharset(): CharsetTransformerFactory
+  def compileCharset(): BitsCharsetTransformerFactory
 
 }

@@ -27,10 +27,10 @@ final class CustomNonByteSizeCharsetCompiler
 }
 
 class CustomNonByteSizeCharsetTransformerFactory(name: String)
-    extends CharsetTransformerFactory("X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE") {
+    extends BitsCharsetTransformerFactory {
 
   override def newInstance()= {
     val xformer = new CustomNonByteSizeCharset(name)
-    xformer
+    xformer.bitsCharset
   }
 }

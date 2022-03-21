@@ -107,8 +107,8 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
           CharsetUtils.supportedEncodingsString
         )
       }
-      if (!encodingEv.isConstant) checkCharset(state, cs2.bitsCharset)
-      cs2.bitsCharset
+      if (!encodingEv.isConstant) checkCharset(state, cs2)
+      cs2
     } else {
       if (!encodingEv.isConstant) checkCharset(state, cs)
       cs

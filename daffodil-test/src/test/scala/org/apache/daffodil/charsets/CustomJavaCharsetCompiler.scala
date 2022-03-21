@@ -28,10 +28,10 @@ final class CustomJavaCharsetCompiler
 }
 
 class CustomJavaCharsetTransformerFactory(name: String)
-    extends CharsetTransformerFactory("ISO-8859-13") {
+    extends BitsCharsetTransformerFactory {
 
   override def newInstance()= {
     val xformer = new CustomJavaCharset(name)
-    xformer
+    xformer.bitsCharset
   }
 }

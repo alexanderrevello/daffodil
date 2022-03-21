@@ -44,4 +44,6 @@ object CharsetCompilerRegistry {
       maybeCompiler.get
     }
   }
+
+  def supportedEncodingsString = {charsetCompilerMap.keySet.mkString(", ")}
 }
