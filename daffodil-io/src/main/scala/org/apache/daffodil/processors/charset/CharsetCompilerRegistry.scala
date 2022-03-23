@@ -18,13 +18,7 @@ package org.apache.daffodil.processors.charset
 
 import org.apache.daffodil.exceptions.ThrowsSDE
 import org.apache.daffodil.util.SimpleNamedServiceLoader
-//import org.apache.daffodil.processors.charset.CharsetUtils
 
-
-/**
- * Transformers have factories. This lets you find the transformer factory
- * by the name obtained from dfdlx:layerTransform.
- */
 object CharsetCompilerRegistry {
 
   private lazy val charsetCompilerMap: Map[String, CharsetCompiler] =
