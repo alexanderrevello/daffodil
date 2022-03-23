@@ -28,7 +28,7 @@ package org.apache.daffodil.processors.charset
  *
  * This must be implmented as part of implementation of a daffodil charset.
  */
-abstract class BitsCharsetTransformerFactory
+abstract class BitsCharsetFactory
   extends Serializable {
 
   def newInstance(): BitsCharset

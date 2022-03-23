@@ -32,6 +32,30 @@ object BitsCharsetUSASCII6BitPackedLSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
+final class BitsCharsetUSASCII6BitPackedLSBFCompiler
+  extends CharsetCompiler("X-DFDL-US-ASCII-6-BIT-PACKED-LSB-FIRST") {
+
+  override def compileCharset() = {
+    new BitsCharsetUSASCII6BitPackedLSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetUSASCII6BitPackedLSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUSASCII6BitPackedLSBF
+  }
+}
+
+final class BitsCharsetUSASCII6BitPackedLSBFAliasCompiler
+  extends CharsetCompiler("X-DFDL-US-ASCII-6-BIT-PACKED") {
+
+  override def compileCharset() = {
+    new BitsCharsetUSASCII6BitPackedLSBFTransformerFactory(name)
+  }
+}
+
 object BitsCharsetUSASCII6BitPackedMSBF extends {
   override val name = "X-DFDL-US-ASCII-6-BIT-PACKED-MSB-FIRST"
   override val bitWidthOfACodeUnit = 6
@@ -39,3 +63,19 @@ object BitsCharsetUSASCII6BitPackedMSBF extends {
   override val replacementCharCode = 0x1F
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
+
+final class BitsCharsetUSASCII6BitPackedMSBFCompiler
+  extends CharsetCompiler("X-DFDL-US-ASCII-6-BIT-PACKED-MSB-FIRST") {
+
+  override def compileCharset() = {
+    new BitsCharsetUSASCII6BitPackedMSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetUSASCII6BitPackedMSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUSASCII6BitPackedMSBF
+  }
+}

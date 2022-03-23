@@ -33,11 +33,10 @@ object CharsetUtils {
    * encodings as well as the standard ones.
    */
   def getCharset(name: String): BitsCharset = {
-    val cs = DaffodilCharsetProvider.charsetForName(name)
-    cs
+    CharsetCompilerRegistry.find(name).compileCharset.newInstance()
   }
   
-  def supportedEncodingsString = DaffodilCharsetProvider.charsets.map { _.name }.mkString(", ")
+  def supportedEncodingsString = CharsetCompilerRegistry.supportedEncodingsString
 
   /**
    * Subtle bug in decoders in Java 7 when there is room for only 1

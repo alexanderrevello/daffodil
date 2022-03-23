@@ -31,6 +31,22 @@ object BitsCharsetHexLSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
+final class BitsCharsetHexLSBFCompiler
+  extends CharsetCompiler("X-DFDL-HEX-LSBF") {
+
+  override def compileCharset() = {
+    new BitsCharsetHexLSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetHexLSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetHexLSBF
+  }
+}
+
 /**
  * X-DFDL-HEX-MSBF occupies only 4 bits with each
  * code unit.
@@ -42,3 +58,19 @@ object BitsCharsetHexMSBF extends {
   override val replacementCharCode = 0x00
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
+
+final class BitsCharsetHexMSBFCompiler
+  extends CharsetCompiler("X-DFDL-HEX-MSBF") {
+
+  override def compileCharset() = {
+    new BitsCharsetHexMSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetHexMSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetHexMSBF
+  }
+}

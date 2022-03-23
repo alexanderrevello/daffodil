@@ -1,0 +1,54 @@
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+
+org.apache.daffodil.processors.charset.ASCIICompiler
+org.apache.daffodil.processors.charset.ASCIICompilerAlias
+org.apache.daffodil.processors.charset.BitsCharsetAISPayloadArmoringCompiler
+org.apache.daffodil.processors.charset.BitsCharsetISO88591Compiler
+org.apache.daffodil.processors.charset.BitsCharsetBase4LSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetBase4MSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetBinaryLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetBinaryMSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetHexLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetHexMSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetIBM037Compiler
+org.apache.daffodil.processors.charset.BitsCharsetIBM037AliasCompiler
+org.apache.daffodil.processors.charset.BitsCharsetISO885918BitPackedLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetISO885918BitPackedMSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetOctalLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetOctalMSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharset5BitPackedLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUSASCII6BitPackedLSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUSASCII6BitPackedLSBFAliasCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUSASCII6BitPackedMSBFCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUSASCII7BitPackedCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF8Compiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF16BECompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF16BEAliasCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF16LECompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF32BECompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF32BEAliasCompiler
+org.apache.daffodil.processors.charset.BitsCharsetUTF32LECompiler
+org.apache.daffodil.processors.charset.BitsCharset6BitDFI264DUI001Compiler
+org.apache.daffodil.processors.charset.BitsCharset6BitDFI311DUI002Compiler
+org.apache.daffodil.processors.charset.BitsCharset6BitICAOAircraftIDCompiler
+org.apache.daffodil.processors.charset.BitsCharset6BitICAOAircraftIDAliasCompiler
+org.apache.daffodil.processors.charset.BitsCharset3BitDFI336DUI001Compiler
+org.apache.daffodil.processors.charset.BitsCharset4BitDFI746DUI002Compiler
+org.apache.daffodil.processors.charset.BitsCharset3BitDFI746DUI002Compiler
+org.apache.daffodil.processors.charset.BitsCharset3BitDFI747DUI001Compiler
+org.apache.daffodil.processors.charset.BitsCharset5BitDFI769DUI002Compiler
+org.apache.daffodil.processors.charset.BitsCharset5BitDFI1661DUI001Compiler

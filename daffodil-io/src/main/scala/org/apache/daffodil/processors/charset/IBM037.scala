@@ -55,3 +55,27 @@ class BitsCharsetDecoderIBM037
     dec
   }
 }
+
+final class BitsCharsetIBM037Compiler
+  extends CharsetCompiler("IBM037") {
+
+  override def compileCharset() = {
+    new BitsCharsetIBM037TransformerFactory(name)
+  }
+}
+
+final class BitsCharsetIBM037AliasCompiler
+  extends CharsetCompiler("EBCDIC-CP-US") {
+
+  override def compileCharset() = {
+    new BitsCharsetIBM037TransformerFactory(name)
+  }
+}
+
+class BitsCharsetIBM037TransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetIBM037
+  }
+}

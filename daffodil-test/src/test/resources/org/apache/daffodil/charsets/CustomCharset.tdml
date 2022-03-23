@@ -24,7 +24,7 @@
   xmlns:ex="http://example.com"
   xmlns:tns="urn:org.apache.daffodil.charsets.CustomCharset" defaultRoundTrip="none">
 
-  <tdml:parserTestCase name="parse_charsets" root="s1" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:parserTestCase name="parse_charsets" root="s1" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
     <tdml:infoset>
       <tdml:dfdlInfoset>
@@ -42,7 +42,7 @@
 
   </tdml:parserTestCase>
 
-  <tdml:unparserTestCase name="unparse_charsets" root="s1" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:unparserTestCase name="unparse_charsets" root="s1" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
     <tdml:document>
       <tdml:documentPart type="byte"><![CDATA[C0 31 32 33 34 35 36 37
@@ -59,7 +59,7 @@
     </tdml:infoset>
   </tdml:unparserTestCase>
 
-  <tdml:parserTestCase name="parse_charsets2" root="s2" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:parserTestCase name="parse_charsets2" root="s2" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
     <tdml:infoset>
       <tdml:dfdlInfoset>
@@ -77,7 +77,7 @@
 
   </tdml:parserTestCase>
 
-  <tdml:unparserTestCase name="unparse_charsets2" root="s2" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:unparserTestCase name="unparse_charsets2" root="s2" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
     <tdml:document>
       <tdml:documentPart type="byte"><![CDATA[C0 31 32 33 34 35 36 37
@@ -94,7 +94,7 @@
     </tdml:infoset>
   </tdml:unparserTestCase>
 
-  <tdml:parserTestCase name="parse_charsets3" root="s3" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:parserTestCase name="parse_charsets3" root="s3" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
   <tdml:infoset>
     <tdml:dfdlInfoset>
@@ -112,7 +112,7 @@
 
 </tdml:parserTestCase>
 
-<tdml:unparserTestCase name="unparse_charsets3" root="s3" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+<tdml:unparserTestCase name="unparse_charsets3" root="s3" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
   <tdml:document>
     <tdml:documentPart type="byte"><![CDATA[C0 31 32 33 34 35 36 37
@@ -129,7 +129,7 @@
   </tdml:infoset>
 </tdml:unparserTestCase>
 
-  <tdml:unparserTestCase name="unparse_charsets4" root="s4" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd" roundTrip="none">
+  <tdml:unparserTestCase name="unparse_charsets4" root="s4" model="org/apache/daffodil/charsets/CustomCharset.dfdl.xsd">
 
     <tdml:document>
       <tdml:documentPart type="byte"><![CDATA[C0 31 32 33 34 35 36 37]]>
@@ -143,8 +143,8 @@
       </tdml:dfdlInfoset>
     </tdml:infoset>
     <tdml:errors>
-      <tdml:error>The charset</tdml:error>
-      <tdml:error>was not found</tdml:error>
+      <tdml:error>The encoding 'ISO-DNE' was not found.</tdml:error>
+      <tdml:error>Available choices are</tdml:error>
     </tdml:errors>
   </tdml:unparserTestCase>
 

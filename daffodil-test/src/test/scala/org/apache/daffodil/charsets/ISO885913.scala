@@ -22,13 +22,8 @@ import org.apache.daffodil.processors.charset.BitsCharsetJava
 import org.apache.daffodil.processors.charset.BitsCharsetDecoderByteSize
 import org.apache.daffodil.io.InputSourceDataInputStream
 import org.apache.daffodil.io.FormatInfo
-
-final class CustomJavaCharset(
-  name2: String){
-
-def bitsCharset = BitsCharsetISO885913
-
-}
+import org.apache.daffodil.processors.charset.CharsetCompiler
+import org.apache.daffodil.processors.charset.BitsCharsetFactory
 
 object BitsCharsetISO885913 extends {
   override val name = "ISO-8859-13"
@@ -44,5 +39,21 @@ class BitsCharsetDecoderISO885913
   protected override def decodeOneChar(dis: InputSourceDataInputStream, finfo: FormatInfo): Char = {
     val byte = getByte(dis, 0)
     byte.toChar
+  }
+}
+
+final class BitsCharsetISO885913Compiler
+  extends CharsetCompiler("ISO-8859-13") {
+
+  override def compileCharset() = {
+    new BitsCharsetISO885913TransformerFactory(name)
+  }
+}
+
+class BitsCharsetISO885913TransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetISO885913
   }
 }

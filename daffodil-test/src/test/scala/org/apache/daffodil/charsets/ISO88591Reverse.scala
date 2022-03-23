@@ -19,18 +19,30 @@ package org.apache.daffodil.charsets
 
 import org.apache.daffodil.schema.annotation.props.gen.BitOrder
 import org.apache.daffodil.processors.charset.BitsCharsetNonByteSize
+import org.apache.daffodil.processors.charset.CharsetCompiler
+import org.apache.daffodil.processors.charset.BitsCharsetFactory
 
-final class CustomNonByteSizeCharset(
-  name2: String){
-
-def bitsCharset = new ISO88591Reverse(name2)
-
-}
-
-final class ISO88591Reverse(name2: String)extends{
-override val name = name2
+object BitsCharsetISO88591Reverse extends{
+  override val name = "X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE"
   override val bitWidthOfACodeUnit = 8
   override val decodeString = (0 to 255).map { _.toChar }.mkString.reverse
   override val replacementCharCode = 0x0
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
+
+
+final class BitsCharsetISO88591ReverseCompiler
+  extends CharsetCompiler("X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE") {
+
+  override def compileCharset() = {
+    new BitsCharsetISO88591ReverseTransformerFactory(name)
+  }
+}
+
+class BitsCharsetISO88591ReverseTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetISO88591Reverse
+  }
+}

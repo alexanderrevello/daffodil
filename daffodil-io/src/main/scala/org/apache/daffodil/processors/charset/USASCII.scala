@@ -39,3 +39,27 @@ class BitsCharsetDecoderUSASCII
     byte.toChar
   }
 }
+
+final class ASCIICompilerAlias
+  extends CharsetCompiler("ASCII") {
+
+  override def compileCharset() = {
+    new USASCIICharsetTransformerFactory(name)
+  }
+}
+
+final class ASCIICompiler
+  extends CharsetCompiler("US-ASCII") {
+
+  override def compileCharset() = {
+    new USASCIICharsetTransformerFactory(name)
+  }
+}
+
+class USASCIICharsetTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUSASCII
+  }
+}

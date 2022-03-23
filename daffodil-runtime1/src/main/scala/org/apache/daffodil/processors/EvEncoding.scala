@@ -21,7 +21,6 @@ import org.apache.daffodil.dsom._
 import org.apache.daffodil.processors.charset.BitsCharset
 import org.apache.daffodil.processors.charset.BitsCharsetJava
 import org.apache.daffodil.processors.charset.BitsCharsetNonByteSize
-import org.apache.daffodil.processors.charset.CharsetUtils
 import org.apache.daffodil.exceptions.Assert
 import org.apache.daffodil.util.MaybeInt
 import org.apache.daffodil.cookers.FillByteCooker
@@ -94,25 +93,12 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
 
   override def compute(state: ParseOrUnparseState) = {
     val encString = encodingEv.evaluate(state)
-    val cs = CharsetUtils.getCharset(encString)
-    if (cs == null) {
-      val cs2 = CharsetCompilerRegistry
-        .find(encString, tci)
-        .compileCharset
-        .newInstance()
-      if (cs2 == null) {
-        tci.schemaDefinitionError(
-          "Unsupported encoding: %s. Supported encodings: %s",
-          encString,
-          CharsetUtils.supportedEncodingsString
-        )
-      }
-      if (!encodingEv.isConstant) checkCharset(state, cs2)
-      cs2
-    } else {
-      if (!encodingEv.isConstant) checkCharset(state, cs)
-      cs
-    }
+    val cs2 = CharsetCompilerRegistry
+      .find(encString, tci)
+      .compileCharset
+      .newInstance()
+    if (!encodingEv.isConstant) checkCharset(state, cs2)
+    cs2
   }
 }
 

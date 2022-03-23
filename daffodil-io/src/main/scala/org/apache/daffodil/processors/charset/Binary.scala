@@ -31,6 +31,22 @@ object BitsCharsetBinaryLSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
+final class BitsCharsetBinaryLSBFCompiler
+  extends CharsetCompiler("X-DFDL-BITS-LSBF") {
+
+  override def compileCharset() = {
+    new BitsCharsetBinaryLSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetBinaryLSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetBinaryLSBF
+  }
+}
+
 /**
  * X-DFDL-BITS-MSBF occupies only 1 bit with each
  * code unit.
@@ -42,3 +58,19 @@ object BitsCharsetBinaryMSBF extends {
   override val replacementCharCode = 0x0
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
+
+final class BitsCharsetBinaryMSBFCompiler
+  extends CharsetCompiler("X-DFDL-BITS-MSBF") {
+
+  override def compileCharset() = {
+    new BitsCharsetBinaryMSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetBinaryMSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetBinaryMSBF
+  }
+}

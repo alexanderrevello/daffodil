@@ -48,3 +48,20 @@ class BitsCharsetDecoderUTF32LE
     }
   }
 }
+
+final class BitsCharsetUTF32LECompiler
+  extends CharsetCompiler("UTF-32LE") {
+
+  override def compileCharset() = {
+
+    new BitsCharsetUTF32LETransformerFactory(name)
+  }
+}
+
+class BitsCharsetUTF32LETransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUTF32LE
+  }
+}

@@ -26,7 +26,7 @@
 
   <annotation>
     <appinfo source="http://www.ogf.org/dfdl/">
-      <dfdl:format ref="tns:GeneralFormat" initiator="" terminator="" leadingSkip="0" trailingSkip="0" textBidi="no" floating="no" encoding="ASCII" byteOrder="bigEndian" alignment="implicit" alignmentUnits="bits" fillByte="f" occursCountKind="implicit" truncateSpecifiedLengthString="no" ignoreCase="no" representation="text" lengthKind="delimited" nilValueDelimiterPolicy="both" emptyValueDelimiterPolicy="none" documentFinalTerminatorCanBeMissing="yes" initiatedContent="no" separatorSuppressionPolicy="anyEmpty" separatorPosition="infix" textTrimKind="none" />
+      <dfdl:format ref="tns:GeneralFormat" />
     </appinfo>
   </annotation>
 

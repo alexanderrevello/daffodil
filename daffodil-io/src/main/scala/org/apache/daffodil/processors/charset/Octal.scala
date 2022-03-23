@@ -31,6 +31,22 @@ object BitsCharsetOctalLSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
+final class BitsCharsetOctalLSBFCompiler
+  extends CharsetCompiler("X-DFDL-OCTAL-LSBF") {
+
+  override def compileCharset() = {
+    new BitsCharsetOctalLSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetOctalLSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetOctalLSBF
+  }
+}
+
 /**
  * X-DFDL-OCTAL-MSBF occupies only 3 bits with each
  * code unit.
@@ -42,3 +58,20 @@ object BitsCharsetOctalMSBF extends {
   override val replacementCharCode = 0x0
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize 
+
+final class BitsCharsetOctalMSBFCompiler
+  extends CharsetCompiler("X-DFDL-OCTAL-MSBF") {
+
+  override def compileCharset() = {
+
+    new BitsCharsetOctalMSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharsetOctalMSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetOctalMSBF
+  }
+}

@@ -13,19 +13,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-# PLEASE NOTE:
-#
-# These are in src/test/resources not src/main/resources because they're not
-# "real" in the sense of being fully featured. E.g., AIS only does the payload
-# armoring, not everything else about AIS. IPv4 just does the IPv4 header, not
-# TCP, UDP, ICMP, etc. all of which have related checksum algorithms that should
-# share code. A real CheckDigits has to have different layer length kinds supported
-# so that one can compute check digits from elements with different
-# of length kinds.
-#
-# These are partial/subsets of "real" functionality that give us test coverage
-# of the layering features of Daffodil. They can be reused to create "real"
-# layering, but one should expect to have to adapt their code substantially.
-#
-org.apache.daffodil.charsets.CustomNonByteSizeCharsetCompiler
-org.apache.daffodil.charsets.CustomJavaCharsetCompiler
+
+org.apache.daffodil.charsets.BitsCharsetISO88591ReverseCompiler
+org.apache.daffodil.charsets.BitsCharsetISO885913Compiler

@@ -38,3 +38,19 @@ object BitsCharset5BitPackedLSBF extends {
     else super.charToCode(char)
   }
 }
+
+final class BitsCharset5BitPackedLSBFCompiler
+  extends CharsetCompiler("X-DFDL-5-BIT-PACKED-LSBF") {
+
+  override def compileCharset() = {
+    new BitsCharset5BitPackedLSBFTransformerFactory(name)
+  }
+}
+
+class BitsCharset5BitPackedLSBFTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharset5BitPackedLSBF
+  }
+}

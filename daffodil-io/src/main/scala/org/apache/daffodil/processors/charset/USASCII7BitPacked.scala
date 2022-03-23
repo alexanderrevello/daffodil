@@ -30,3 +30,19 @@ object BitsCharsetUSASCII7BitPacked extends {
   override val replacementCharCode = 0x3F
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
+
+final class BitsCharsetUSASCII7BitPackedCompiler
+  extends CharsetCompiler("X-DFDL-US-ASCII-7-BIT-PACKED") {
+
+  override def compileCharset() = {
+    new BitsCharsetUSASCII7BitPackedTransformerFactory(name)
+  }
+}
+
+class BitsCharsetUSASCII7BitPackedTransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUSASCII7BitPacked
+  }
+}

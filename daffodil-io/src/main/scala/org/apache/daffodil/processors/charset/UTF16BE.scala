@@ -54,3 +54,27 @@ class BitsCharsetDecoderUTF16BE
     high.toChar
   }
 }
+
+final class BitsCharsetUTF16BECompiler
+  extends CharsetCompiler("UTF-16BE") {
+
+  override def compileCharset() = {
+    new BitsCharsetUTF16BETransformerFactory(name)
+  }
+}
+
+class BitsCharsetUTF16BETransformerFactory(name: String)
+    extends BitsCharsetFactory {
+
+  override def newInstance()= {
+    BitsCharsetUTF16BE
+  }
+}
+
+final class BitsCharsetUTF16BEAliasCompiler
+  extends CharsetCompiler("UTF-16") {
+
+  override def compileCharset() = {
+    new BitsCharsetUTF16BETransformerFactory(name)
+  }
+}

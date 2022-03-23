@@ -36,14 +36,28 @@ object CharsetCompilerRegistry {
    * The state is passed in order to provide diagnostic context if not found.
    */
   def find(name: String, context: ThrowsSDE): CharsetCompiler = {
-    val maybeCompiler: Option[CharsetCompiler] = charsetCompilerMap.get(name)
-    if (maybeCompiler.isEmpty) {
+    val optCompiler: Option[CharsetCompiler] = charsetCompilerMap.get(name)
+    if (optCompiler.isEmpty) {
       val choices = charsetCompilerMap.keySet.mkString(", ")
-      context.SDE("The charset '%s' was not found. Available choices are: %s", name, choices + ", " + CharsetUtils.supportedEncodingsString)
+      context.SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
     } else {
-      maybeCompiler.get
+      optCompiler.get
     }
   }
+
+    def find(name: String): CharsetCompiler = {
+    val optCompiler: Option[CharsetCompiler] = charsetCompilerMap.get(name)
+    if (optCompiler.isEmpty) {
+      val choices = charsetCompilerMap.keySet.mkString(", ")
+      SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
+    } else {
+      optCompiler.get
+    }
+  }
+
+      def SDE(id: String, args: Any*): Nothing = {
+      throw new Exception(id.format(args: _*))
+    }
 
   def supportedEncodingsString = {charsetCompilerMap.keySet.mkString(", ")}
 }
