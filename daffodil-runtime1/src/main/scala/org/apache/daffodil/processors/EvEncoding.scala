@@ -93,12 +93,12 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
 
   override def compute(state: ParseOrUnparseState) = {
     val encString = encodingEv.evaluate(state)
-    val cs2 = CharsetCompilerRegistry
+    val cs = CharsetCompilerRegistry
       .find(encString, tci)
       .compileCharset
       .newInstance()
-    if (!encodingEv.isConstant) checkCharset(state, cs2)
-    cs2
+    if (!encodingEv.isConstant) checkCharset(state, cs)
+    cs
   }
 }
 
