@@ -18,8 +18,6 @@
 
 package org.apache.daffodil.processors.charset
 
-//import org.apache.daffodil.processors.charset.BitsCharset
-
 /**
  * Factory for a charset transformer.
  *

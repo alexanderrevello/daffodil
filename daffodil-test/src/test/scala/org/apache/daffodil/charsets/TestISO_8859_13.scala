@@ -24,36 +24,43 @@ import org.apache.daffodil.io.InputSourceDataInputStream
 import org.apache.daffodil.io.FormatInfo
 import org.apache.daffodil.processors.charset.CharsetCompiler
 import org.apache.daffodil.processors.charset.BitsCharsetFactory
+import java.nio.ByteBuffer
+import java.nio.charset.Charset
 
-object BitsCharsetISO885913 extends {
+object BitsCharsetTest_ISO_8859_13 extends {
   override val name = "ISO-8859-13"
 } with BitsCharsetJava {
 
-  override def newDecoder() = new BitsCharsetDecoderISO885913()
+  override def newDecoder() = new BitsCharsetTest_Decoder_ISO_8859_13()
 
 }
 
-class BitsCharsetDecoderISO885913
+class BitsCharsetTest_Decoder_ISO_8859_13
   extends BitsCharsetDecoderByteSize {
+
+  val decodeString = {
+    val bytes = ByteBuffer.wrap((0 to 255).map{ _.toByte }.toArray)
+    Charset.forName("ISO-8859-13").newDecoder().decode(bytes).toString
+  }
 
   protected override def decodeOneChar(dis: InputSourceDataInputStream, finfo: FormatInfo): Char = {
     val byte = getByte(dis, 0)
-    byte.toChar
+    decodeString(byte)
   }
 }
 
-final class BitsCharsetISO885913Compiler
+final class BitsCharsetTest_ISO_8859_13_Compiler
   extends CharsetCompiler("ISO-8859-13") {
 
   override def compileCharset() = {
-    new BitsCharsetISO885913TransformerFactory(name)
+    new BitsCharsetTest_ISO_8859_13_TransformerFactory(name)
   }
 }
 
-class BitsCharsetISO885913TransformerFactory(name: String)
+class BitsCharsetTest_ISO_8859_13_TransformerFactory(name: String)
     extends BitsCharsetFactory {
 
   override def newInstance()= {
-    BitsCharsetISO885913
+    BitsCharsetTest_ISO_8859_13
   }
 }

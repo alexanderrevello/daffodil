@@ -34,7 +34,7 @@
     <complexType>
       <sequence>
         <element name="e1" dfdl:encoding="ISO-8859-13" dfdl:lengthKind="explicit" dfdl:length="8" type="xsd:string" />
-        <element name="e2" dfdl:encoding="X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE" dfdl:lengthKind="delimited" type="xsd:string" />
+        <element name="e2" dfdl:encoding="X-DFDL-ISO-8859-1-8-BIT-PACKED-LSB-FIRST-REVERSE" dfdl:lengthKind="delimited" type="xsd:string" />
       </sequence>
     </complexType>
   </element>

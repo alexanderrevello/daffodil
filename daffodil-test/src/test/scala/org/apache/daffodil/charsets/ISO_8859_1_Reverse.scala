@@ -22,8 +22,8 @@ import org.apache.daffodil.processors.charset.BitsCharsetNonByteSize
 import org.apache.daffodil.processors.charset.CharsetCompiler
 import org.apache.daffodil.processors.charset.BitsCharsetFactory
 
-object BitsCharsetISO88591Reverse extends{
-  override val name = "X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE"
+object BitsCharset_ISO_8859_1_Reverse extends{
+  override val name = "X-DFDL-ISO-8859-1-8-BIT-PACKED-LSB-FIRST-REVERSE"
   override val bitWidthOfACodeUnit = 8
   override val decodeString = (0 to 255).map { _.toChar }.mkString.reverse
   override val replacementCharCode = 0x0
@@ -31,18 +31,18 @@ object BitsCharsetISO88591Reverse extends{
 } with BitsCharsetNonByteSize
 
 
-final class BitsCharsetISO88591ReverseCompiler
-  extends CharsetCompiler("X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST-REVERSE") {
+final class BitsCharset_ISO_8859_1_Reverse_Compiler
+  extends CharsetCompiler("X-DFDL-ISO-8859-1-8-BIT-PACKED-LSB-FIRST-REVERSE") {
 
   override def compileCharset() = {
-    new BitsCharsetISO88591ReverseTransformerFactory(name)
+    new BitsCharset_ISO_8859_1_Reverse_TransformerFactory(name)
   }
 }
 
-class BitsCharsetISO88591ReverseTransformerFactory(name: String)
+class BitsCharset_ISO_8859_1_Reverse_TransformerFactory(name: String)
     extends BitsCharsetFactory {
 
   override def newInstance()= {
-    BitsCharsetISO88591Reverse
+    BitsCharset_ISO_8859_1_Reverse
   }
 }
