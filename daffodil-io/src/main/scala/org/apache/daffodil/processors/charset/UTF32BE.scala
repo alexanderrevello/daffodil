@@ -50,15 +50,17 @@ class BitsCharsetDecoderUTF32BE
   }
 }
 
-final class BitsCharsetUTF32BECompiler
-  extends CharsetCompiler("UTF-32BE") {
+final class BitsCharsetUTF32BEDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetUTF32BETransformerFactory(name)
+  override def name() = "UTF-32BE"
+
+  override def newFactory() = {
+    new BitsCharsetUTF32BEFactory()
   }
 }
 
-class BitsCharsetUTF32BETransformerFactory(name: String)
+final class BitsCharsetUTF32BEFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -66,10 +68,12 @@ class BitsCharsetUTF32BETransformerFactory(name: String)
   }
 }
 
-final class BitsCharsetUTF32BEAliasCompiler
-  extends CharsetCompiler("UTF-32") {
+final class BitsCharsetUTF32BEAliasDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetUTF32BETransformerFactory(name)
+  override def name() = "UTF-32"
+
+  override def newFactory() = {
+    new BitsCharsetUTF32BEFactory()
   }
 }

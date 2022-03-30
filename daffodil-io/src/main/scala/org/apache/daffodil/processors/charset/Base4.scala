@@ -31,15 +31,17 @@ object BitsCharsetBase4LSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetBase4LSBFCompiler
-  extends CharsetCompiler("X-DFDL-BASE4-LSBF") {
+final class BitsCharsetBase4LSBFDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetBase4LSBFTransformerFactory(name)
+  override def name() = "X-DFDL-BASE4-LSBF"
+
+  override def newFactory() = {
+    new BitsCharsetBase4LSBFFactory()
   }
 }
 
-class BitsCharsetBase4LSBFTransformerFactory(name: String)
+class BitsCharsetBase4LSBFFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -55,15 +57,17 @@ object BitsCharsetBase4MSBF extends {
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetBase4MSBFCompiler
-  extends CharsetCompiler("X-DFDL-BASE4-MSBF") {
+final class BitsCharsetBase4MSBFDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetBase4MSBFTransformerFactory(name)
+  override def name() = "X-DFDL-BASE4-MSBF"
+
+  override def newFactory() = {
+    new BitsCharsetBase4MSBFFactory()
   }
 }
 
-class BitsCharsetBase4MSBFTransformerFactory(name: String)
+final class BitsCharsetBase4MSBFFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

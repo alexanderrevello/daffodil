@@ -37,16 +37,18 @@ class BitsCharsetDecoderISO88591
   }
 }
 
-final class BitsCharsetISO88591Compiler
-  extends CharsetCompiler("ISO-8859-1") {
+final class BitsCharsetISO88591Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
+  override def name() = "ISO-8859-1"
 
-    new BitsCharsetISO88591TransformerFactory(name)
+  override def newFactory() = {
+
+    new BitsCharsetISO88591Factory()
   }
 }
 
-class BitsCharsetISO88591TransformerFactory(name: String)
+final class BitsCharsetISO88591Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

@@ -14,5 +14,5 @@
 #  limitations under the License.
 #
 
-org.apache.daffodil.charsets.BitsCharset_ISO_8859_1_Reverse_Compiler
-org.apache.daffodil.charsets.BitsCharsetTest_ISO_8859_13_Compiler
+org.apache.daffodil.charsets.BitsCharset_ISO_8859_1_Reverse_Definition
+org.apache.daffodil.charsets.BitsCharsetTest_ISO_8859_13_Definition

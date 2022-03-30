@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -15,21 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.apache.daffodil.processors.charset
 
 /**
- * Must be implemented by all charsets.
+ * Factory for a Daffodil charset.
  *
- * These are the classes which must be dynamically loaded in order to add a charset implementation
- * to Daffodil.
+ * This is the serialized object which is saved as part of a processor.
+ * It constructs a charset at runtime when newInstance() is called.
  *
- * These instances are NOT serialized as part of a saved processor. The compileCharset method
- * is called and the resulting CharsetTransformerFactory is the serialized object.
+ * This must be implemented as part of implementing a Daffodil charset.
  */
-abstract class CharsetCompiler(nom: String) {
+abstract class BitsCharsetFactory
+  extends Serializable {
 
-  def name() = nom
-
-  def compileCharset(): BitsCharsetFactory
-
+  def newInstance(): BitsCharset
 }

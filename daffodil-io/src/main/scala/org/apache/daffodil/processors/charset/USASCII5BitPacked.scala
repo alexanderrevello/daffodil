@@ -39,15 +39,17 @@ object BitsCharset5BitPackedLSBF extends {
   }
 }
 
-final class BitsCharset5BitPackedLSBFCompiler
-  extends CharsetCompiler("X-DFDL-5-BIT-PACKED-LSBF") {
+final class BitsCharset5BitPackedLSBFDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset5BitPackedLSBFTransformerFactory(name)
+  override def name() = "X-DFDL-5-BIT-PACKED-LSBF"
+
+  override def newFactory() = {
+    new BitsCharset5BitPackedLSBFFactory()
   }
 }
 
-class BitsCharset5BitPackedLSBFTransformerFactory(name: String)
+final class BitsCharset5BitPackedLSBFFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

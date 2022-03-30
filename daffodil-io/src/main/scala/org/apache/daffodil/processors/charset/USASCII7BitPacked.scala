@@ -31,15 +31,17 @@ object BitsCharsetUSASCII7BitPacked extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetUSASCII7BitPackedCompiler
-  extends CharsetCompiler("X-DFDL-US-ASCII-7-BIT-PACKED") {
+final class BitsCharsetUSASCII7BitPackedDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetUSASCII7BitPackedTransformerFactory(name)
+  override def name() = "X-DFDL-US-ASCII-7-BIT-PACKED"
+
+  override def newFactory() = {
+    new BitsCharsetUSASCII7BitPackedFactory()
   }
 }
 
-class BitsCharsetUSASCII7BitPackedTransformerFactory(name: String)
+final class BitsCharsetUSASCII7BitPackedFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

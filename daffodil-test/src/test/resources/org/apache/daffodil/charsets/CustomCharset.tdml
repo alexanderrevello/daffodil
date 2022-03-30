@@ -65,9 +65,9 @@
     <tdml:infoset>
       <tdml:dfdlInfoset>
         <s2>
-          <!-- First char in e1 is unicode char 0x104 captial A with Greek Ogonek --> 
+          <!-- First char in e1 is unicode char 0xC0 captial A with grave -->
           <e1>À1234567</e1>
-          <!-- First char in e2 is unicode char 0xC0 captial A with grave -->
+          <!-- First char in e2 is unicode char 0x104 captial A with Greek Ogonek --> 
           <e2>Ą1234567</e2>
         </s2>
       </tdml:dfdlInfoset>
@@ -90,7 +90,9 @@
     <tdml:infoset>
       <tdml:dfdlInfoset>
         <tns:s2>
+          <!-- First char in e1 is unicode char 0x104 captial A with Greek Ogonek --> 
           <e1>À1234567</e1>
+          <!-- First char in e2 is unicode char 0xC0 captial A with grave -->
           <e2>Ą1234567</e2>
         </tns:s2>
       </tdml:dfdlInfoset>
@@ -102,7 +104,9 @@
   <tdml:infoset>
     <tdml:dfdlInfoset>
       <s3>
+        <!-- First char in e1 is unicode char 0xC0 captial A with grave -->
         <e1>Ą1234567</e1>
+        <!-- First char in e2 is unicode char 0x104 captial A with Greek Ogonek -->
         <e2>À1234567</e2>
       </s3>
     </tdml:dfdlInfoset>
@@ -125,7 +129,9 @@
   <tdml:infoset>
     <tdml:dfdlInfoset>
       <tns:s3>
+        <!-- First char in e1 is unicode char 0x104 captial A with Greek Ogonek -->
         <e1>Ą1234567</e1>
+        <!-- First char in e2 is unicode char 0xC0 captial A with grave -->
         <e2>À1234567</e2>
       </tns:s3>
     </tdml:dfdlInfoset>
@@ -141,6 +147,7 @@
     <tdml:infoset>
       <tdml:dfdlInfoset>
         <tns:s4>
+          <!-- First char in e1 is unicode char 0xC0 captial A with grave -->
           <e1>À1234567</e1>
         </tns:s4>
       </tdml:dfdlInfoset>

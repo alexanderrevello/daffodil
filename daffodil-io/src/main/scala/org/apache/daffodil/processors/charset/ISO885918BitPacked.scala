@@ -31,15 +31,17 @@ object BitsCharsetISO885918BitPackedLSBF extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetISO885918BitPackedLSBFCompiler
-  extends CharsetCompiler("X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST") {
+final class BitsCharsetISO885918BitPackedLSBFDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetISO885918BitPackedLSBFTransformerFactory(name)
+    override def name() = "X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST"
+
+  override def newFactory() = {
+    new BitsCharsetISO885918BitPackedLSBFFactory()
   }
 }
 
-class BitsCharsetISO885918BitPackedLSBFTransformerFactory(name: String)
+final class BitsCharsetISO885918BitPackedLSBFFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -59,15 +61,17 @@ object BitsCharsetISO885918BitPackedMSBF extends {
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetISO885918BitPackedMSBFCompiler
-  extends CharsetCompiler("X-DFDL-ISO-88591-8-BIT-PACKED-MSB-FIRST") {
+final class BitsCharsetISO885918BitPackedMSBFDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetISO885918BitPackedMSBFTransformerFactory(name)
+  override def name() = "X-DFDL-ISO-88591-8-BIT-PACKED-MSB-FIRST"
+
+  override def newFactory() = {
+    new BitsCharsetISO885918BitPackedMSBFFactory()
   }
 }
 
-class BitsCharsetISO885918BitPackedMSBFTransformerFactory(name: String)
+final class BitsCharsetISO885918BitPackedMSBFFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

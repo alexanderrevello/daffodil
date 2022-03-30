@@ -120,15 +120,17 @@ class BitsCharsetDecoderUTF8
   }
 }
 
-final class BitsCharsetUTF8Compiler
-  extends CharsetCompiler("UTF-8") {
+final class BitsCharsetUTF8Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetUTF8TransformerFactory(name)
+  override def name() = "UTF-8"
+
+  override def newFactory() = {
+    new BitsCharsetUTF8Factory()
   }
 }
 
-class BitsCharsetUTF8TransformerFactory(name: String)
+final class BitsCharsetUTF8Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

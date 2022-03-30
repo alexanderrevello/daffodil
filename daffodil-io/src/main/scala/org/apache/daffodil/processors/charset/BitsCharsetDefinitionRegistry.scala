@@ -19,33 +19,33 @@ package org.apache.daffodil.processors.charset
 import org.apache.daffodil.exceptions.ThrowsSDE
 import org.apache.daffodil.util.SimpleNamedServiceLoader
 
-object CharsetCompilerRegistry {
+object BitsCharsetDefinitionRegistry {
 
-  private lazy val charsetCompilerMap: Map[String, CharsetCompiler] =
-    SimpleNamedServiceLoader.loadClass[CharsetCompiler](classOf[CharsetCompiler])
+  private lazy val bitsCharsetDefinitionMap: Map[String, BitsCharsetDefinition] =
+    SimpleNamedServiceLoader.loadClass[BitsCharsetDefinition](classOf[BitsCharsetDefinition])
 
   /**
    * Given name, finds the factory for the transformer. SDE otherwise.
    *
    * The state is passed in order to provide diagnostic context if not found.
    */
-  def find(name: String, context: ThrowsSDE): CharsetCompiler = {
-    val optCompiler: Option[CharsetCompiler] = charsetCompilerMap.get(name)
-    if (optCompiler.isEmpty) {
-      val choices = charsetCompilerMap.keySet.mkString(", ")
+  def find(name: String, context: ThrowsSDE): BitsCharsetDefinition = {
+    val optDefinition: Option[BitsCharsetDefinition] = bitsCharsetDefinitionMap.get(name)
+    if (optDefinition.isEmpty) {
+      val choices = bitsCharsetDefinitionMap.keySet.mkString(", ")
       context.SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
     } else {
-      optCompiler.get
+      optDefinition.get
     }
   }
 
-    def find(name: String): CharsetCompiler = {
-    val optCompiler: Option[CharsetCompiler] = charsetCompilerMap.get(name)
-    if (optCompiler.isEmpty) {
-      val choices = charsetCompilerMap.keySet.mkString(", ")
+    def find(name: String): BitsCharsetDefinition = {
+    val optDefinition: Option[BitsCharsetDefinition] = bitsCharsetDefinitionMap.get(name)
+    if (optDefinition.isEmpty) {
+      val choices = bitsCharsetDefinitionMap.keySet.mkString(", ")
       SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
     } else {
-      optCompiler.get
+      optDefinition.get
     }
   }
 
@@ -53,5 +53,5 @@ object CharsetCompilerRegistry {
       throw new Exception(id.format(args: _*))
     }
 
-  def supportedEncodingsString = {charsetCompilerMap.keySet.mkString(", ")}
+  def supportedEncodingsString = {bitsCharsetDefinitionMap.keySet.mkString(", ")}
 }

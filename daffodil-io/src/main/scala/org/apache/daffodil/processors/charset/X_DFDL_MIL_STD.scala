@@ -40,15 +40,17 @@ object BitsCharset6BitDFI264DUI001 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset6BitDFI264DUI001Compiler
-  extends CharsetCompiler("X-DFDL-6-BIT-DFI-264-DUI-001") {
+final class BitsCharset6BitDFI264DUI001Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset6BitDFI264DUI001TransformerFactory(name)
+  override def name() = "X-DFDL-6-BIT-DFI-264-DUI-001"
+
+  override def newFactory() = {
+    new BitsCharset6BitDFI264DUI001Factory()
   }
 }
 
-class BitsCharset6BitDFI264DUI001TransformerFactory(name: String)
+final class BitsCharset6BitDFI264DUI001Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -67,15 +69,17 @@ object BitsCharset6BitDFI311DUI002 extends BitsCharset6BitDFI311DUI002Base {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 }
 
-final class BitsCharset6BitDFI311DUI002Compiler
-  extends CharsetCompiler("X-DFDL-6-BIT-DFI-311-DUI-002") {
+final class BitsCharset6BitDFI311DUI002Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset6BitDFI311DUI002TransformerFactory(name)
+  override def name() = "X-DFDL-6-BIT-DFI-311-DUI-002"
+
+  override def newFactory() = {
+    new BitsCharset6BitDFI311DUI002Factory()
   }
 }
 
-class BitsCharset6BitDFI311DUI002TransformerFactory(name: String)
+final class BitsCharset6BitDFI311DUI002Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -89,15 +93,17 @@ object BitsCharset6BitICAOAircraftID extends BitsCharset6BitDFI311DUI002Base {
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 }
 
-final class BitsCharset6BitICAOAircraftIDCompiler
-  extends CharsetCompiler("X-DFDL-6-BIT-ICAO-Aircraft-ID") {
+final class BitsCharset6BitICAOAircraftIDDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset6BitICAOAircraftIDTransformerFactory(name)
+  override def name() = "X-DFDL-6-BIT-ICAO-Aircraft-ID"
+
+  override def newFactory() = {
+    new BitsCharset6BitICAOAircraftIDFactory()
   }
 }
 
-class BitsCharset6BitICAOAircraftIDTransformerFactory(name: String)
+final class BitsCharset6BitICAOAircraftIDFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -105,11 +111,13 @@ class BitsCharset6BitICAOAircraftIDTransformerFactory(name: String)
   }
 }
 
-final class BitsCharset6BitICAOAircraftIDAliasCompiler
-  extends CharsetCompiler("X-DFDL-6-BIT-ICAO-AIRCRAFT-ID") {
+final class BitsCharset6BitICAOAircraftIDAliasDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset6BitICAOAircraftIDTransformerFactory(name)
+  override def name() = "X-DFDL-6-BIT-ICAO-AIRCRAFT-ID"
+
+  override def newFactory() = {
+    new BitsCharset6BitICAOAircraftIDFactory()
   }
 }
 
@@ -121,15 +129,17 @@ object BitsCharset3BitDFI336DUI001 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset3BitDFI336DUI001Compiler
-  extends CharsetCompiler("X-DFDL-3-BIT-DFI-336-DUI-001") {
+final class BitsCharset3BitDFI336DUI001Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset3BitDFI336DUI001TransformerFactory(name)
+  override def name() = "X-DFDL-3-BIT-DFI-336-DUI-001"
+
+  override def newFactory() = {
+    new BitsCharset3BitDFI336DUI001Factory()
   }
 }
 
-class BitsCharset3BitDFI336DUI001TransformerFactory(name: String)
+final class BitsCharset3BitDFI336DUI001Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -145,15 +155,17 @@ object BitsCharset4BitDFI746DUI002 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset4BitDFI746DUI002Compiler
-  extends CharsetCompiler("X-DFDL-4-BIT-DFI-746-DUI-002") {
+final class BitsCharset4BitDFI746DUI002Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset4BitDFI746DUI002TransformerFactory(name)
+  override def name() = "X-DFDL-4-BIT-DFI-746-DUI-002"
+
+  override def newFactory() = {
+    new BitsCharset4BitDFI746DUI002Factory()
   }
 }
 
-class BitsCharset4BitDFI746DUI002TransformerFactory(name: String)
+final class BitsCharset4BitDFI746DUI002Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -169,15 +181,17 @@ object BitsCharset3BitDFI746DUI002 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset3BitDFI746DUI002Compiler
-  extends CharsetCompiler("X-DFDL-3-BIT-DFI-746-DUI-002") {
+final class BitsCharset3BitDFI746DUI002Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset3BitDFI746DUI002TransformerFactory(name)
+  override def name() = "X-DFDL-3-BIT-DFI-746-DUI-002"
+
+  override def newFactory() = {
+    new BitsCharset3BitDFI746DUI002Factory()
   }
 }
 
-class BitsCharset3BitDFI746DUI002TransformerFactory(name: String)
+final class BitsCharset3BitDFI746DUI002Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -193,15 +207,17 @@ object BitsCharset3BitDFI747DUI001 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset3BitDFI747DUI001Compiler
-  extends CharsetCompiler("X-DFDL-3-BIT-DFI-747-DUI-001") {
+final class BitsCharset3BitDFI747DUI001Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset3BitDFI747DUI001TransformerFactory(name)
+  override def name() = "X-DFDL-3-BIT-DFI-747-DUI-001"
+
+  override def newFactory() = {
+    new BitsCharset3BitDFI747DUI001Factory()
   }
 }
 
-class BitsCharset3BitDFI747DUI001TransformerFactory(name: String)
+final class BitsCharset3BitDFI747DUI001Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -217,15 +233,17 @@ object BitsCharset5BitDFI769DUI002 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset5BitDFI769DUI002Compiler
-  extends CharsetCompiler("X-DFDL-5-BIT-DFI-769-DUI-002") {
+final class BitsCharset5BitDFI769DUI002Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset5BitDFI769DUI002TransformerFactory(name)
+  override def name() = "X-DFDL-5-BIT-DFI-769-DUI-002"
+
+  override def newFactory() = {
+    new BitsCharset5BitDFI769DUI002Factory()
   }
 }
 
-class BitsCharset5BitDFI769DUI002TransformerFactory(name: String)
+final class BitsCharset5BitDFI769DUI002Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {
@@ -241,15 +259,17 @@ object BitsCharset5BitDFI1661DUI001 extends {
   override val requiredBitOrder = BitOrder.LeastSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharset5BitDFI1661DUI001Compiler
-  extends CharsetCompiler("X-DFDL-5-BIT-DFI-1661-DUI-001") {
+final class BitsCharset5BitDFI1661DUI001Definition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharset5BitDFI1661DUI001TransformerFactory(name)
+  override def name() = "X-DFDL-5-BIT-DFI-1661-DUI-001"
+
+  override def newFactory() = {
+    new BitsCharset5BitDFI1661DUI001Factory()
   }
 }
 
-class BitsCharset5BitDFI1661DUI001TransformerFactory(name: String)
+final class BitsCharset5BitDFI1661DUI001Factory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

@@ -25,7 +25,7 @@ import org.apache.daffodil.exceptions.Assert
 import org.apache.daffodil.util.MaybeInt
 import org.apache.daffodil.cookers.FillByteCooker
 import org.apache.daffodil.cookers.EncodingCooker
-import org.apache.daffodil.processors.charset.CharsetCompilerRegistry
+import org.apache.daffodil.processors.charset.BitsCharsetDefinitionRegistry
 
 /*
  * The way encoding works, is if a EncodingChangeParser or Unparser is
@@ -93,9 +93,9 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
 
   override def compute(state: ParseOrUnparseState) = {
     val encString = encodingEv.evaluate(state)
-    val cs = CharsetCompilerRegistry
+    val cs = BitsCharsetDefinitionRegistry
       .find(encString, tci)
-      .compileCharset
+      .newFactory
       .newInstance()
     if (!encodingEv.isConstant) checkCharset(state, cs)
     cs

@@ -45,15 +45,17 @@ object BitsCharsetAISPayloadArmoring extends {
   override val requiredBitOrder = BitOrder.MostSignificantBitFirst
 } with BitsCharsetNonByteSize
 
-final class BitsCharsetAISPayloadArmoringCompiler
-  extends CharsetCompiler("X-DAFFODIL-AIS-PAYLOAD-ARMORING") {
+final class BitsCharsetAISPayloadArmoringDefinition
+  extends BitsCharsetDefinition {
 
-  override def compileCharset() = {
-    new BitsCharsetAISPayloadArmoringTransformerFactory(name)
+  override def name() = "X-DAFFODIL-AIS-PAYLOAD-ARMORING"
+
+  override def newFactory() = {
+    new BitsCharsetAISPayloadArmoringFactory()
   }
 }
 
-class BitsCharsetAISPayloadArmoringTransformerFactory(name: String)
+final class BitsCharsetAISPayloadArmoringFactory()
     extends BitsCharsetFactory {
 
   override def newInstance()= {

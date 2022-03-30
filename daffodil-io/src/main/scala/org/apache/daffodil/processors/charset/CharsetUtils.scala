@@ -33,10 +33,10 @@ object CharsetUtils {
    * encodings as well as the standard ones.
    */
   def getCharset(name: String): BitsCharset = {
-    CharsetCompilerRegistry.find(name).compileCharset.newInstance()
+    BitsCharsetDefinitionRegistry.find(name).newFactory.newInstance
   }
   
-  def supportedEncodingsString = CharsetCompilerRegistry.supportedEncodingsString
+  def supportedEncodingsString = BitsCharsetDefinitionRegistry.supportedEncodingsString
 
   /**
    * Subtle bug in decoders in Java 7 when there is room for only 1
