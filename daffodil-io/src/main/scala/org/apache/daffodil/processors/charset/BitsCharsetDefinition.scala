@@ -17,18 +17,15 @@
 package org.apache.daffodil.processors.charset
 
 /**
- * Must be implemented by all charsets.
- *
  * These are the classes which must be dynamically loaded in order to add a charset implementation
- * to Daffodil. All charsets must implement this class
- *
- * A saved processor does NOT serialize this class. It calls the newFactory method and serializes
- * the resulting BitsCharsetFactory.
+ * to Daffodil. All charsets must implement this class and be added to the 
+ * org.apache.daffodil.processors.charset.BitsCharsetDefinition file in 
+ * daffodil-io/src/main/resources/META-INF/services
  */
 abstract class BitsCharsetDefinition {
 
   def name(): String
 
-  def newFactory(): BitsCharsetFactory
+  def newInstance: BitsCharset
 
 }

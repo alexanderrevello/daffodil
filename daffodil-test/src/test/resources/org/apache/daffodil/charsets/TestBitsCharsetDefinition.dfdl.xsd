@@ -16,8 +16,8 @@
   limitations under the License.
 -->
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:org.apache.daffodil.charsets.CustomCharset"
-  xmlns:tns="urn:org.apache.daffodil.charsets.CustomCharset"
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:org.apache.daffodil.charsets.TestBitsCharsetDefinition"
+  xmlns:tns="urn:org.apache.daffodil.charsets.TestBitsCharsetDefinition"
   xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

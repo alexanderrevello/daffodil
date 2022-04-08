@@ -36,15 +36,7 @@ final class BitsCharsetHexLSBFDefinition
 
   override def name() = "X-DFDL-HEX-LSBF"
 
-  override def newFactory() = {
-    new BitsCharsetHexLSBFFactory()
-  }
-}
-
-class BitsCharsetHexLSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetHexLSBF
   }
 }
@@ -66,15 +58,7 @@ final class BitsCharsetHexMSBFDefinition
 
   override def name() = "X-DFDL-HEX-MSBF"
 
-  override def newFactory() = {
-    new BitsCharsetHexMSBFFactory()
-  }
-}
-
-final class BitsCharsetHexMSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetHexMSBF
   }
 }

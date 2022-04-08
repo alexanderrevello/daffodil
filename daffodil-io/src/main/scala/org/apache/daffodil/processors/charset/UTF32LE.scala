@@ -54,16 +54,8 @@ final class BitsCharsetUTF32LEDefinition
 
   override def name() = "UTF-32LE"
 
-  override def newFactory() = {
+  override def newInstance() = {
 
-    new BitsCharsetUTF32LEFactory()
-  }
-}
-
-final class BitsCharsetUTF32LEFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
     BitsCharsetUTF32LE
   }
 }

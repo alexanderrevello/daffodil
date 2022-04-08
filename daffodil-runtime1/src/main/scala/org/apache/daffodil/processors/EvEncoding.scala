@@ -93,10 +93,11 @@ abstract class CharsetEvBase(encodingEv: EncodingEvBase, tci: DPathCompileInfo)
 
   override def compute(state: ParseOrUnparseState) = {
     val encString = encodingEv.evaluate(state)
-    val cs = BitsCharsetDefinitionRegistry
-      .find(encString, tci)
-      .newFactory
-      .newInstance()
+    val bcd = BitsCharsetDefinitionRegistry.find(encString).getOrElse(null)
+    if (bcd == null) {
+      tci.schemaDefinitionError("Unsupported encoding: %s. Supported encodings: %s", encString, BitsCharsetDefinitionRegistry.supportedEncodingsString)
+    }
+    val cs = bcd.newInstance
     if (!encodingEv.isConstant) checkCharset(state, cs)
     cs
   }

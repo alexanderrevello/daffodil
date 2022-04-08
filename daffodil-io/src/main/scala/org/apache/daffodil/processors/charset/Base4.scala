@@ -36,15 +36,7 @@ final class BitsCharsetBase4LSBFDefinition
 
   override def name() = "X-DFDL-BASE4-LSBF"
 
-  override def newFactory() = {
-    new BitsCharsetBase4LSBFFactory()
-  }
-}
-
-class BitsCharsetBase4LSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetBase4LSBF
   }
 }
@@ -62,15 +54,7 @@ final class BitsCharsetBase4MSBFDefinition
 
   override def name() = "X-DFDL-BASE4-MSBF"
 
-  override def newFactory() = {
-    new BitsCharsetBase4MSBFFactory()
-  }
-}
-
-final class BitsCharsetBase4MSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetBase4MSBF
   }
 }

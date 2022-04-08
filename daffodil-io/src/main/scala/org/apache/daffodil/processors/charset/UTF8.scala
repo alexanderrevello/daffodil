@@ -125,15 +125,7 @@ final class BitsCharsetUTF8Definition
 
   override def name() = "UTF-8"
 
-  override def newFactory() = {
-    new BitsCharsetUTF8Factory()
-  }
-}
-
-final class BitsCharsetUTF8Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUTF8
   }
 }

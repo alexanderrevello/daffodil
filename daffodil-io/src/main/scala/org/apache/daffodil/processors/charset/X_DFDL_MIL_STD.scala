@@ -45,16 +45,8 @@ final class BitsCharset6BitDFI264DUI001Definition
 
   override def name() = "X-DFDL-6-BIT-DFI-264-DUI-001"
 
-  override def newFactory() = {
-    new BitsCharset6BitDFI264DUI001Factory()
-  }
-}
-
-final class BitsCharset6BitDFI264DUI001Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
-    BitsCharset6BitDFI264DUI001
+  override def newInstance() = {
+        BitsCharset6BitDFI264DUI001
   }
 }
 
@@ -74,15 +66,7 @@ final class BitsCharset6BitDFI311DUI002Definition
 
   override def name() = "X-DFDL-6-BIT-DFI-311-DUI-002"
 
-  override def newFactory() = {
-    new BitsCharset6BitDFI311DUI002Factory()
-  }
-}
-
-final class BitsCharset6BitDFI311DUI002Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset6BitDFI311DUI002
   }
 }
@@ -98,15 +82,7 @@ final class BitsCharset6BitICAOAircraftIDDefinition
 
   override def name() = "X-DFDL-6-BIT-ICAO-Aircraft-ID"
 
-  override def newFactory() = {
-    new BitsCharset6BitICAOAircraftIDFactory()
-  }
-}
-
-final class BitsCharset6BitICAOAircraftIDFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset6BitICAOAircraftID
   }
 }
@@ -116,8 +92,8 @@ final class BitsCharset6BitICAOAircraftIDAliasDefinition
 
   override def name() = "X-DFDL-6-BIT-ICAO-AIRCRAFT-ID"
 
-  override def newFactory() = {
-    new BitsCharset6BitICAOAircraftIDFactory()
+  override def newInstance() = {
+    BitsCharset6BitICAOAircraftID
   }
 }
 
@@ -134,15 +110,7 @@ final class BitsCharset3BitDFI336DUI001Definition
 
   override def name() = "X-DFDL-3-BIT-DFI-336-DUI-001"
 
-  override def newFactory() = {
-    new BitsCharset3BitDFI336DUI001Factory()
-  }
-}
-
-final class BitsCharset3BitDFI336DUI001Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset3BitDFI336DUI001
   }
 }
@@ -160,15 +128,7 @@ final class BitsCharset4BitDFI746DUI002Definition
 
   override def name() = "X-DFDL-4-BIT-DFI-746-DUI-002"
 
-  override def newFactory() = {
-    new BitsCharset4BitDFI746DUI002Factory()
-  }
-}
-
-final class BitsCharset4BitDFI746DUI002Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset4BitDFI746DUI002
   }
 }
@@ -186,15 +146,7 @@ final class BitsCharset3BitDFI746DUI002Definition
 
   override def name() = "X-DFDL-3-BIT-DFI-746-DUI-002"
 
-  override def newFactory() = {
-    new BitsCharset3BitDFI746DUI002Factory()
-  }
-}
-
-final class BitsCharset3BitDFI746DUI002Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset3BitDFI746DUI002
   }
 }
@@ -212,15 +164,7 @@ final class BitsCharset3BitDFI747DUI001Definition
 
   override def name() = "X-DFDL-3-BIT-DFI-747-DUI-001"
 
-  override def newFactory() = {
-    new BitsCharset3BitDFI747DUI001Factory()
-  }
-}
-
-final class BitsCharset3BitDFI747DUI001Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset3BitDFI747DUI001
   }
 }
@@ -238,15 +182,7 @@ final class BitsCharset5BitDFI769DUI002Definition
 
   override def name() = "X-DFDL-5-BIT-DFI-769-DUI-002"
 
-  override def newFactory() = {
-    new BitsCharset5BitDFI769DUI002Factory()
-  }
-}
-
-final class BitsCharset5BitDFI769DUI002Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset5BitDFI769DUI002
   }
 }
@@ -264,15 +200,7 @@ final class BitsCharset5BitDFI1661DUI001Definition
 
   override def name() = "X-DFDL-5-BIT-DFI-1661-DUI-001"
 
-  override def newFactory() = {
-    new BitsCharset5BitDFI1661DUI001Factory()
-  }
-}
-
-final class BitsCharset5BitDFI1661DUI001Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset5BitDFI1661DUI001
   }
 }

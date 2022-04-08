@@ -44,15 +44,7 @@ final class BitsCharset5BitPackedLSBFDefinition
 
   override def name() = "X-DFDL-5-BIT-PACKED-LSBF"
 
-  override def newFactory() = {
-    new BitsCharset5BitPackedLSBFFactory()
-  }
-}
-
-final class BitsCharset5BitPackedLSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharset5BitPackedLSBF
   }
 }

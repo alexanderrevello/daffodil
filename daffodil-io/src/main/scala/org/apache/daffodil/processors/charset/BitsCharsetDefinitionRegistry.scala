@@ -16,42 +16,21 @@
  */
 package org.apache.daffodil.processors.charset
 
-import org.apache.daffodil.exceptions.ThrowsSDE
 import org.apache.daffodil.util.SimpleNamedServiceLoader
 
+/*
+ * Finds all pluggable BitCharsets and makes them available to Daffodil after they have been
+ * setup as described in BitsCharsetDefinition.scala
+ */
 object BitsCharsetDefinitionRegistry {
 
   private lazy val bitsCharsetDefinitionMap: Map[String, BitsCharsetDefinition] =
     SimpleNamedServiceLoader.loadClass[BitsCharsetDefinition](classOf[BitsCharsetDefinition])
 
   /**
-   * Given name, finds the factory for the transformer. SDE otherwise.
-   *
-   * The state is passed in order to provide diagnostic context if not found.
+   * Given name, finds the BitsCharsetDefinition or null if not found
    */
-  def find(name: String, context: ThrowsSDE): BitsCharsetDefinition = {
-    val optDefinition: Option[BitsCharsetDefinition] = bitsCharsetDefinitionMap.get(name)
-    if (optDefinition.isEmpty) {
-      val choices = bitsCharsetDefinitionMap.keySet.mkString(", ")
-      context.SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
-    } else {
-      optDefinition.get
-    }
-  }
+  def find(name: String): Option[BitsCharsetDefinition] = bitsCharsetDefinitionMap.get(name)
 
-    def find(name: String): BitsCharsetDefinition = {
-    val optDefinition: Option[BitsCharsetDefinition] = bitsCharsetDefinitionMap.get(name)
-    if (optDefinition.isEmpty) {
-      val choices = bitsCharsetDefinitionMap.keySet.mkString(", ")
-      SDE("The encoding '%s' was not found. Available choices are: %s", name, choices)
-    } else {
-      optDefinition.get
-    }
-  }
-
-      def SDE(id: String, args: Any*): Nothing = {
-      throw new Exception(id.format(args: _*))
-    }
-
-  def supportedEncodingsString = {bitsCharsetDefinitionMap.keySet.mkString(", ")}
+  def supportedEncodingsString = bitsCharsetDefinitionMap.keySet.mkString(", ")
 }

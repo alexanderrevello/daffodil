@@ -23,7 +23,6 @@ import org.apache.daffodil.processors.charset.BitsCharsetDecoderByteSize
 import org.apache.daffodil.io.InputSourceDataInputStream
 import org.apache.daffodil.io.FormatInfo
 import org.apache.daffodil.processors.charset.BitsCharsetDefinition
-import org.apache.daffodil.processors.charset.BitsCharsetFactory
 import java.nio.ByteBuffer
 import java.nio.charset.Charset
 
@@ -54,15 +53,7 @@ final class BitsCharsetTest_ISO_8859_13_Definition
 
   override def name() = "ISO-8859-13"
 
-  override def newFactory() = {
-    new BitsCharsetTest_ISO_8859_13_Factory()
-  }
-}
-
-final class BitsCharsetTest_ISO_8859_13_Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetTest_ISO_8859_13
   }
 }

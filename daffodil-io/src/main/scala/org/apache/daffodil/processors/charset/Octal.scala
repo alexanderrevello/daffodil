@@ -36,15 +36,7 @@ final class BitsCharsetOctalLSBFDefinition
 
   override def name() = "X-DFDL-OCTAL-LSBF"
 
-  override def newFactory() = {
-    new BitsCharsetOctalLSBFFactory()
-  }
-}
-
-final class BitsCharsetOctalLSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetOctalLSBF
   }
 }
@@ -66,16 +58,7 @@ final class BitsCharsetOctalMSBFDefinition
 
   override def name() = "X-DFDL-OCTAL-MSBF"
 
-  override def newFactory() = {
-
-    new BitsCharsetOctalMSBFFactory()
-  }
-}
-
-final class BitsCharsetOctalMSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetOctalMSBF
   }
 }

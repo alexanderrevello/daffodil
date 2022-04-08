@@ -42,16 +42,7 @@ final class BitsCharsetISO88591Definition
 
   override def name() = "ISO-8859-1"
 
-  override def newFactory() = {
-
-    new BitsCharsetISO88591Factory()
-  }
-}
-
-final class BitsCharsetISO88591Factory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetISO88591
   }
 }

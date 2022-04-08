@@ -24,7 +24,7 @@ import org.junit.AfterClass
 object TestCharsets {
 
   val testDir = "/org/apache/daffodil/charsets/"
-  val runner = Runner(testDir, "CustomCharset.tdml")
+  val runner = Runner(testDir, "TestBitsCharsetDefinition.tdml")
 
   @AfterClass def shutDown(): Unit = {
     runner.reset
@@ -40,6 +40,6 @@ class TestCharsets{
   @Test def unparse_loaded_charsets2(): Unit = { runner.runOneTest("unparse_charsets2") }
   @Test def parse_loaded_charsets3(): Unit = { runner.runOneTest("parse_charsets3") }
   @Test def unparse_loaded_charsets3(): Unit = { runner.runOneTest("unparse_charsets3") }
-  @Test def unparse_loaded_charsets_DNE(): Unit = { runner.runOneTest("unparse_charsets4") }
+  @Test def unparse_loaded_charsets_DNE(): Unit = { runner.runOneTest("verify_error_message") }
 
 }

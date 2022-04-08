@@ -37,15 +37,7 @@ final class BitsCharsetUSASCII6BitPackedLSBFDefinition
 
   override def name() = "X-DFDL-US-ASCII-6-BIT-PACKED-LSB-FIRST"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCII6BitPackedLSBFFactory()
-  }
-}
-
-final class BitsCharsetUSASCII6BitPackedLSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUSASCII6BitPackedLSBF
   }
 }
@@ -55,8 +47,8 @@ final class BitsCharsetUSASCII6BitPackedLSBFAliasDefinition
 
   override def name() = "X-DFDL-US-ASCII-6-BIT-PACKED"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCII6BitPackedLSBFFactory()
+  override def newInstance() = {
+    BitsCharsetUSASCII6BitPackedLSBF
   }
 }
 
@@ -73,15 +65,7 @@ final class BitsCharsetUSASCII6BitPackedMSBFDefinition
 
   override def name() = "X-DFDL-US-ASCII-6-BIT-PACKED-MSB-FIRST"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCII6BitPackedMSBFFactory()
-  }
-}
-
-final class BitsCharsetUSASCII6BitPackedMSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUSASCII6BitPackedMSBF
   }
 }

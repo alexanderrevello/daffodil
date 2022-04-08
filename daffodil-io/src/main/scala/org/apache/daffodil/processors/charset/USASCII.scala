@@ -45,8 +45,8 @@ final class BitsCharsetUSASCIIAliasDefinition
 
   override def name() = "ASCII"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCIIFactory()
+  override def newInstance() = {
+    BitsCharsetUSASCII
   }
 }
 
@@ -55,15 +55,7 @@ final class BitsCharsetUSASCIIDefinition
 
   override def name() = "US-ASCII"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCIIFactory()
-  }
-}
-
-final class BitsCharsetUSASCIIFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUSASCII
   }
 }

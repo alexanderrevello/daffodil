@@ -33,7 +33,10 @@ object CharsetUtils {
    * encodings as well as the standard ones.
    */
   def getCharset(name: String): BitsCharset = {
-    BitsCharsetDefinitionRegistry.find(name).newFactory.newInstance
+    val cs = BitsCharsetDefinitionRegistry.find(name).getOrElse(null)
+    if (cs == null)
+      SDE("The encoding '%s' was not found. Available choices are: %s", name, BitsCharsetDefinitionRegistry.supportedEncodingsString)
+    cs.newInstance
   }
   
   def supportedEncodingsString = BitsCharsetDefinitionRegistry.supportedEncodingsString
@@ -68,6 +71,10 @@ object CharsetUtils {
   }
 
   val unicodeReplacementChar = '\uFFFD'
+
+  private def SDE(id: String, args: Any*): Nothing = {
+    throw new Exception(id.format(args: _*))
+  }
 }
 
 sealed abstract class CoderInfo(val encodingMandatoryAlignmentInBits: Int, val maybeCharWidthInBits: MaybeInt)

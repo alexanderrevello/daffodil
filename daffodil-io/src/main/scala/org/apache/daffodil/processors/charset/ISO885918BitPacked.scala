@@ -36,15 +36,7 @@ final class BitsCharsetISO885918BitPackedLSBFDefinition
 
     override def name() = "X-DFDL-ISO-88591-8-BIT-PACKED-LSB-FIRST"
 
-  override def newFactory() = {
-    new BitsCharsetISO885918BitPackedLSBFFactory()
-  }
-}
-
-final class BitsCharsetISO885918BitPackedLSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetISO885918BitPackedLSBF
   }
 }
@@ -66,15 +58,7 @@ final class BitsCharsetISO885918BitPackedMSBFDefinition
 
   override def name() = "X-DFDL-ISO-88591-8-BIT-PACKED-MSB-FIRST"
 
-  override def newFactory() = {
-    new BitsCharsetISO885918BitPackedMSBFFactory()
-  }
-}
-
-final class BitsCharsetISO885918BitPackedMSBFFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetISO885918BitPackedMSBF
   }
 }

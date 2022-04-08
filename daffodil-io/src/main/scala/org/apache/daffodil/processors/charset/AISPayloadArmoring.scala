@@ -50,15 +50,7 @@ final class BitsCharsetAISPayloadArmoringDefinition
 
   override def name() = "X-DAFFODIL-AIS-PAYLOAD-ARMORING"
 
-  override def newFactory() = {
-    new BitsCharsetAISPayloadArmoringFactory()
-  }
-}
-
-final class BitsCharsetAISPayloadArmoringFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetAISPayloadArmoring
   }
 }

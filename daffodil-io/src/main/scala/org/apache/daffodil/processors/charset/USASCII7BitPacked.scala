@@ -36,15 +36,7 @@ final class BitsCharsetUSASCII7BitPackedDefinition
 
   override def name() = "X-DFDL-US-ASCII-7-BIT-PACKED"
 
-  override def newFactory() = {
-    new BitsCharsetUSASCII7BitPackedFactory()
-  }
-}
-
-final class BitsCharsetUSASCII7BitPackedFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUSASCII7BitPacked
   }
 }

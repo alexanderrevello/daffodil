@@ -60,15 +60,7 @@ final class BitsCharsetUTF16BEDefinition
 
   override def name() = "UTF-16BE"
 
-  override def newFactory() = {
-    new BitsCharsetUTF16BEFactory()
-  }
-}
-
-final class BitsCharsetUTF16BEFactory()
-    extends BitsCharsetFactory {
-
-  override def newInstance()= {
+  override def newInstance() = {
     BitsCharsetUTF16BE
   }
 }
@@ -78,7 +70,7 @@ final class BitsCharsetUTF16BEAliasDefinition
 
   override def name() = "UTF-16"
 
-  override def newFactory() = {
-    new BitsCharsetUTF16BEFactory()
+  override def newInstance() = {
+    BitsCharsetUTF16BE
   }
 }
